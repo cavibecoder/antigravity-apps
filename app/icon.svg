@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="64" height="64" rx="16" fill="black"/>
+    <!-- Bottom Left -->
+    <rect x="14" y="36" width="16" height="16" rx="2" fill="white"/>
+    <!-- Bottom Right -->
+    <rect x="34" y="36" width="16" height="16" rx="2" fill="white"/>
+    <!-- Top Left -->
+    <rect x="14" y="16" width="16" height="16" rx="2" fill="white"/>
+    <!-- Top Right (Floating) -->
+    <rect x="36" y="12" width="16" height="16" rx="2" fill="white" transform="rotate(5, 44, 20)"/>
+</svg>
