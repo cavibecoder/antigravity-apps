@@ -27,6 +27,7 @@ export function AppForm({ initialData, onSubmit, onCancel }: AppFormProps) {
 
     useEffect(() => {
         if (initialData) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setFormData({
                 name: initialData.name,
                 nameJa: initialData.nameJa || '',

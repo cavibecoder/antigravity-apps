@@ -28,6 +28,7 @@ export default function Home() {
   useEffect(() => {
     // Load apps on mount
     const loadedApps = getApps();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setApps(loadedApps);
     setIsLoaded(true);
   }, []);

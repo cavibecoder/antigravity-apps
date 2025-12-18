@@ -18,6 +18,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const savedLang = localStorage.getItem('antigravity-lang') as Language;
         if (savedLang && (savedLang === 'en' || savedLang === 'ja')) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setLanguage(savedLang);
         }
         setIsLoaded(true);
