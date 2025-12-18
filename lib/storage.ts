@@ -6,7 +6,7 @@ const DEFAULT_APPS: App[] = [
     {
         id: 'pivot-homepage',
         name: 'Pivot Homepage',
-        nameJa: 'Pivot ホームページ',
+        nameJa: 'ぴぼっと ホームページ',
         url: 'https://pivot-homepage-main.vercel.app/',
         description: 'Moving freely, thinking simply.',
         descriptionJa: '自由に行動し、シンプルに考える。',
@@ -86,7 +86,7 @@ export const getApps = (): App[] => {
             const defaultApp = DEFAULT_APPS.find(d => d.id === app.id);
             if (defaultApp) {
                 // If it's a default app, ensure it has the new fields if they are missing
-                if (!app.nameJa || !app.descriptionJa) {
+                if (!app.nameJa || !app.descriptionJa || (app.id === 'pivot-homepage' && app.nameJa === 'Pivot ホームページ')) {
                     hasUpdates = true;
                     return { ...app, nameJa: defaultApp.nameJa, descriptionJa: defaultApp.descriptionJa };
                 }
