@@ -14,6 +14,16 @@ const DEFAULT_APPS: App[] = [
         createdAt: new Date().toISOString(),
     },
     {
+        id: 'decision-gacha-founders',
+        name: 'Decision Gacha for Founders',
+        nameJa: '決断ガチャ',
+        url: 'https://gacha-for-founder.vercel.app/',
+        description: 'Stop overthinking. Trust the moment.',
+        descriptionJa: '考えすぎるのをやめよう。その瞬間を信じよう。',
+        category: 'Tools',
+        createdAt: new Date().toISOString(),
+    },
+    {
         id: 'forest-garden-care',
         name: 'Tomoura Forest & Garden Care',
         nameJa: '友浦フォレスト＆ガーデンケア',
@@ -86,7 +96,10 @@ export const getApps = (): App[] => {
             const defaultApp = DEFAULT_APPS.find(d => d.id === app.id);
             if (defaultApp) {
                 // If it's a default app, ensure it has the new fields if they are missing
-                if (!app.nameJa || !app.descriptionJa || (app.id === 'pivot-homepage' && app.nameJa === 'Pivot ホームページ')) {
+                if (!app.nameJa ||
+                    !app.descriptionJa ||
+                    (app.id === 'pivot-homepage' && app.nameJa === 'Pivot ホームページ') ||
+                    (app.id === 'decision-gacha-founders' && app.nameJa === 'Decision Gacha for Founders')) {
                     hasUpdates = true;
                     return { ...app, nameJa: defaultApp.nameJa, descriptionJa: defaultApp.descriptionJa };
                 }
