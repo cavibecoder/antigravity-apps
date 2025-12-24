@@ -107,6 +107,20 @@ export const getApps = (): App[] => {
             return app;
         });
 
+        // Cleanup: Remove duplicate Tomoura app if present (e.g. legacy manual entry)
+        const prevLength = updatedApps.length;
+        updatedApps = updatedApps.filter(app => {
+            const isLegacyTomoura = (
+                (app.url === 'https://forest-gardencare-uo1g.vercel.app/ja' || app.nameJa === '友浦フォレスト＆ガーデンケア') &&
+                app.id !== 'forest-garden-care'
+            );
+            return !isLegacyTomoura;
+        });
+
+        if (updatedApps.length !== prevLength) {
+            hasUpdates = true;
+        }
+
         // 3. Sort: Ensure Default Apps appear in order at the top
         // Create a map for quick lookup of default app usage
         const defaultAppIndices = new Map(DEFAULT_APPS.map((app, index) => [app.id, index]));
