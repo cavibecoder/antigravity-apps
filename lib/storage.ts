@@ -14,6 +14,16 @@ const DEFAULT_APPS: App[] = [
         createdAt: new Date().toISOString(),
     },
     {
+        id: 'rope-rigging',
+        name: 'Rope Rigging',
+        nameJa: 'ロープリギング',
+        url: 'https://rope-rigging.vercel.app/',
+        description: 'Visualize and calculate rope rigging systems.',
+        descriptionJa: 'ロープリギングシステムの視覚化と計算。',
+        category: 'Tools',
+        createdAt: new Date().toISOString(),
+    },
+    {
         id: 'decision-gacha-founders',
         name: 'Decision Gacha for Founders',
         nameJa: '決断ガチャ',
