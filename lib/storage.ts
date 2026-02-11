@@ -73,6 +73,16 @@ const DEFAULT_APPS: App[] = [
         category: 'Creator Tools',
         createdAt: new Date().toISOString(),
     },
+    {
+        id: 'editor-for-note',
+        name: 'Editor for Note',
+        nameJa: 'Editor for Note',
+        url: 'https://editor-for-note.vercel.app/',
+        description: 'Markdown editor optimized for note.',
+        descriptionJa: 'noteに最適化されたMarkdownエディタ。',
+        category: 'Creator Tools',
+        createdAt: new Date().toISOString(),
+    },
 ];
 
 export const getApps = (): App[] => {
